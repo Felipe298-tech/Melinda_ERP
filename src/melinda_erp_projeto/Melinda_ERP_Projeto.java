@@ -1,21 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package melinda_erp_projeto;
 
-/**
- *
- * @author Felipe
- */
+import View.Tela_Loading;
+
 public class Melinda_ERP_Projeto {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Tela_Loading loading = new Tela_Loading();
+        loading.setVisible(true);
     }
     
 }
