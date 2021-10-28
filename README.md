@@ -1,12 +1,9 @@
-## Entrega da primeira versão do projeto final (AC2)
+<div align="center">
+  
+</div>
+
 
 ## FCC
-
-•	Matheus Carvalho - 210207 <br/>
-•	Felipe Oliveira Cruz - 210137 <br/>
-•	Aline Silva de Souza Oliveira - 211079 <br/>
-•	Ingrid de Camargo - 210614 <br/>
-•	Lucas Eduardo da Silva - 200739 <br/>
 
 <br/>
 
@@ -37,4 +34,11 @@ De forma automática, após ser vendido o produto é subtraído do estoque e as 
 •	Venda de produtos e integração com estoque <br/>
 ## Release 4 (nov/2021): <br/>
 •	Relatórios de vendas e estoque <br/>
+
+
+•	Matheus Carvalho - 210207 <br/>
+•	Felipe Oliveira Cruz - 210137 <br/>
+•	Aline Silva de Souza Oliveira - 211079 <br/>
+•	Ingrid de Camargo - 210614 <br/>
+•	Lucas Eduardo da Silva - 200739 <br/>
 
