@@ -11,5 +11,4 @@ public class Classeprincipal {
         Tela_Loading loading = new Tela_Loading();
         loading.setVisible(true);
     }
-    
 }

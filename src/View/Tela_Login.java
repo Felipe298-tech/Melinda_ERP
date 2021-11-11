@@ -1,15 +1,31 @@
 package View;
 import View.Cliente.TelaCliente;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 
 public class Tela_Login extends javax.swing.JFrame {
 
     public Tela_Login() {
         initComponents();
+        Font montserrat = null;
+        
+        try{
+        montserrat = Font.createFont(Font.TRUETYPE_FONT, getClass().getClassLoader().getResourceAsStream("Fontes/Montserrat-Regular.ttf"));
+    }
+    catch(IOException|FontFormatException e){
+         System.out.println("Erro " + e);
+    }
+        montserrat = montserrat.deriveFont(Font.PLAIN, 40);
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        ge.registerFont(montserrat);  
+        this.setFont(montserrat); 
     }
     String user = "admin";
     String password = "12345";
-    TelaCliente telaCliente = new TelaCliente();
+    Menu menu = new Menu();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,8 +56,10 @@ public class Tela_Login extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/logo-medio.png"))); // NOI18N
 
+        jLabel3.setFont(getFont());
         jLabel3.setText("Usuário");
 
+        jLabel4.setFont(getFont());
         jLabel4.setText("Senha");
 
         btnEntrar.setBackground(new java.awt.Color(255, 255, 255));
@@ -120,7 +138,7 @@ public class Tela_Login extends javax.swing.JFrame {
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         if(txtUser.getText().equals(user) && password.equals(new String(txtSenha.getPassword()))){
         JOptionPane.showMessageDialog(rootPane, "Bem-vindo admin");
-        telaCliente.setVisible(true);
+        menu.setVisible(true);
         dispose();
         } else {
         JOptionPane.showMessageDialog(rootPane, "Acesso negado!");
