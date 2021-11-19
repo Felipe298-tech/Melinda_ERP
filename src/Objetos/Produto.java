@@ -58,13 +58,4 @@ public class Produto {
         this.precoVenda = precoVenda;
     }
     
-        //MÉTODOS
-    public void limpaProduto(){
-       descricao = "";
-       categoria = "";
-       tamanho = "";
-       fornecedor = "";
-       precoCusto = 0;
-       precoVenda = 0;
-    }
 }

@@ -188,9 +188,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel2" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jTextField1" min="-2" pref="275" max="-2" attributes="0"/>
+                              <Component id="inputPesquisarCliente" min="-2" pref="275" max="-2" attributes="0"/>
                               <EmptySpace pref="215" max="32767" attributes="0"/>
-                              <Component id="jButton7" min="-2" pref="148" max="-2" attributes="0"/>
+                              <Component id="btnAdicionarCliente" min="-2" pref="148" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
@@ -204,8 +204,8 @@
                       <Component id="jLabel2" min="-2" pref="29" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton7" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jTextField1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="btnAdicionarCliente" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="inputPesquisarCliente" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -221,9 +221,9 @@
                 <Property name="text" type="java.lang.String" value="Buscar por um cliente:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="inputPesquisarCliente">
             </Component>
-            <Component class="javax.swing.JButton" name="jButton7">
+            <Component class="javax.swing.JButton" name="btnAdicionarCliente">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection component="Form" name="font" type="property"/>
@@ -231,7 +231,7 @@
                 <Property name="text" type="java.lang.String" value="Adicionar Cliente"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdicionarClienteActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

@@ -8,7 +8,6 @@ public class Cliente {
     private String telefoneCliente = "";
 
     //GET e SET
-
     public String getNomeCliente() {
         return nomeCliente;
     }
