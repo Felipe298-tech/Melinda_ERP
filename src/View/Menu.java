@@ -43,7 +43,6 @@ public class Menu extends javax.swing.JFrame {
         btnSairMenu = new javax.swing.JButton();
         btnMenuCliente = new javax.swing.JButton();
         btnMenuProduto = new javax.swing.JButton();
-        btnMenuRelatorios = new javax.swing.JButton();
         btnMenuFuncionario = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -52,7 +51,9 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnSairMenu.setText("Sair");
+        btnSairMenu.setBackground(new java.awt.Color(255, 255, 255));
+        btnSairMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sair-laranja.png"))); // NOI18N
+        btnSairMenu.setBorder(null);
         btnSairMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairMenuActionPerformed(evt);
@@ -73,13 +74,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btnMenuRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/relatorios.png"))); // NOI18N
-        btnMenuRelatorios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMenuRelatoriosActionPerformed(evt);
-            }
-        });
-
         btnMenuFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/funcionarios.png"))); // NOI18N
         btnMenuFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,18 +88,16 @@ public class Menu extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
+                .addContainerGap(205, Short.MAX_VALUE)
                 .addComponent(btnMenuCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnMenuProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnMenuFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnMenuRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(107, 107, 107))
+                .addComponent(btnMenuProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(196, 196, 196))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addComponent(btnSairMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSairMenu)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(42, 42, 42))
@@ -115,10 +107,9 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap(168, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMenuFuncionario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMenuRelatorios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMenuProduto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMenuCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnMenuFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMenuCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMenuProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(134, 134, 134)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
@@ -151,17 +142,15 @@ public class Menu extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnMenuProdutoActionPerformed
 
-    private void btnMenuRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuRelatoriosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMenuRelatoriosActionPerformed
-
     private void btnMenuFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuFuncionarioActionPerformed
         telaFuncionario.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnMenuFuncionarioActionPerformed
 
     private void btnSairMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairMenuActionPerformed
-
+        Tela_Login login = new Tela_Login();
+        login.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnSairMenuActionPerformed
 
     /**
@@ -203,7 +192,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnMenuCliente;
     private javax.swing.JButton btnMenuFuncionario;
     private javax.swing.JButton btnMenuProduto;
-    private javax.swing.JButton btnMenuRelatorios;
     private javax.swing.JButton btnSairMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel6;

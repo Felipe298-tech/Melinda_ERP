@@ -1,6 +1,5 @@
 package View.Cliente;
 
-import View.Menu;
 import Conexoes.MySQL;
 import javax.swing.JOptionPane;
 import Objetos.Cliente;
@@ -14,7 +13,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
         initComponents();
     }
     
-    private void cadastraCliente(Cliente novoCliente){
+    private void cadastrarCliente(Cliente novoCliente){
         this.conectar.conectaBanco();
         
         novoCliente.setNomeCliente(cadastrarNomeCliente.getText());        
@@ -23,8 +22,7 @@ public class Cad_Cliente extends javax.swing.JFrame {
         novoCliente.setTelefoneCliente(cadastrarTelCliente.getText());
         
         try {
-            
-            this.conectar.insertSQL("INSERT INTO cadastroclientes ("
+            this.conectar.insertSQL("INSERT INTO cadastrocliente ("
                     + "nomeCliente,"
                     + "cpfCliente,"
                     + "emailCliente,"
@@ -37,15 +35,14 @@ public class Cad_Cliente extends javax.swing.JFrame {
                 + ");");
 
         } catch(Exception e){
-            
             System.out.println("Erro ao cadastrar cliente " +  e.getMessage());
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar cliente");
             
         } finally{            
             this.conectar.fechaBanco();
-            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
-            //novoCliente.limpaCliente();
-            //limparCamposCadastro();
+            JOptionPane.showMessageDialog(null, "Funcionário cadastrado com sucesso");
+            dispose();
+            novoCliente.limpaCliente();
         }
     } 
     
@@ -89,6 +86,12 @@ public class Cad_Cliente extends javax.swing.JFrame {
             }
         });
 
+        try {
+            cadastrarTelCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         btnCadastrarCliente.setText("Cadastrar");
         btnCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +105,12 @@ public class Cad_Cliente extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+
+        try {
+            cadastrarCpfCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         jLabel5.setText("E-mail");
 
@@ -179,13 +188,11 @@ public class Cad_Cliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.toBack();
-        setVisible(false);
-        new Menu().toFront();
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarClienteActionPerformed
-        cadastraCliente(novoCliente);
+        cadastrarCliente(novoCliente);
     }//GEN-LAST:event_btnCadastrarClienteActionPerformed
 
     private void cadastrarNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarNomeClienteActionPerformed

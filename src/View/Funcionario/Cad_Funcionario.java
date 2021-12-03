@@ -1,24 +1,56 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View.Funcionario;
 
+import Conexoes.MySQL;
+import Objetos.Cliente;
+import Objetos.Funcionario;
 import View.Menu;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author Lenovo
- */
 public class Cad_Funcionario extends javax.swing.JFrame {
+    
+    MySQL conectar = new MySQL(); //acessar os métodos de conexao com o banco
+    Funcionario novoFuncionario = new Funcionario();
 
-    /**
-     * Creates new form Cad_Funcionario
-     */
     public Cad_Funcionario() {
         initComponents();
     }
+    
+    private void cadastrarFuncionario(Funcionario novoFuncionario){
+        this.conectar.conectaBanco();
+        
+        novoFuncionario.setNomeFuncionario(cadastrarNomeFuncionario.getText());
+        novoFuncionario.setCpfFuncionario(cadastrarCpfFuncionario.getText());
+        novoFuncionario.setTelefoneFuncionario(cadastrarTelFuncionario.getText());
+        novoFuncionario.setCargoFuncionario(cadastrarCargoFuncionario.getText());
+        
+        try {
+            
+            this.conectar.insertSQL("INSERT INTO cadastrofuncionario ("
+                    + "nomeFuncionario,"
+                    + "cpfFuncionario,"
+                    + "telefoneFuncionario,"
+                    + "cargoFuncionario"
+                + ") VALUES ("
+                    + "'" + novoFuncionario.getNomeFuncionario() + "',"
+                    + "'" + novoFuncionario.getCpfFuncionario() + "',"
+                    + "'" + novoFuncionario.getTelefoneFuncionario() + "',"
+                    + "'" + novoFuncionario.getCargoFuncionario() + "'"
+                + ");");
+
+        } catch(Exception e){
+            
+            System.out.println("Erro ao cadastrar funcionário " +  e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar funcionário");
+            
+        } finally{            
+            this.conectar.fechaBanco();
+            JOptionPane.showMessageDialog(null, "Funcionário cadastrado com sucesso");
+            dispose();
+            novoFuncionario.limpaFuncionario();
+        }
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,7 +68,7 @@ public class Cad_Funcionario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         cadastrarNomeFuncionario = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        cadastrarCpfCFuncionario = new javax.swing.JFormattedTextField();
+        cadastrarCpfFuncionario = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
         cadastrarTelFuncionario = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -76,6 +108,12 @@ public class Cad_Funcionario extends javax.swing.JFrame {
 
         jLabel5.setText("Telefone");
 
+        try {
+            cadastrarTelFuncionario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         jLabel6.setText("Cargo");
 
         jButton3.setText("Voltar");
@@ -108,14 +146,14 @@ public class Cad_Funcionario extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cadastrarNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cadastrarCpfCFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cadastrarCpfFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4)
                                     .addComponent(cadastrarTelFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5)
                                     .addComponent(cadastrarCargoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6)))))
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(166, 166, 166)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -133,9 +171,9 @@ public class Cad_Funcionario extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cadastrarCpfCFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cadastrarCpfFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
-                .addComponent(jLabel5)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cadastrarTelFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -177,13 +215,11 @@ public class Cad_Funcionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        this.toBack();
-        setVisible(false);
-        new Menu().toFront();
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnCadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarFuncionarioActionPerformed
-        // TODO add your handling code here:
+        cadastrarFuncionario(novoFuncionario);
     }//GEN-LAST:event_btnCadastrarFuncionarioActionPerformed
 
     /**
@@ -224,7 +260,7 @@ public class Cad_Funcionario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrarFuncionario;
     private javax.swing.JFormattedTextField cadastrarCargoFuncionario;
-    private javax.swing.JFormattedTextField cadastrarCpfCFuncionario;
+    private javax.swing.JFormattedTextField cadastrarCpfFuncionario;
     private javax.swing.JTextField cadastrarNomeFuncionario;
     private javax.swing.JFormattedTextField cadastrarTelFuncionario;
     private javax.swing.JButton jButton1;
