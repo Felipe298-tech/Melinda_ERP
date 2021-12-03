@@ -262,14 +262,12 @@
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="26" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnAdicionarFuncionario" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="btnAtualizarFuncionario" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="btnBuscarFuncionario" alignment="1" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="inputBuscarFuncionario" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="btnDeletarFuncionario" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="btnDeletarFuncionario" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="btnBuscarFuncionario" alignment="0" max="32767" attributes="0"/>
+                          <Component id="inputBuscarFuncionario" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
                       <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
@@ -283,8 +281,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Digite o CPF do funcion&#xe1;rio:"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="inputBuscarFuncionario">
             </Component>
             <Component class="javax.swing.JButton" name="btnAdicionarFuncionario">
               <Properties>
@@ -320,7 +316,7 @@
                               <Component id="buscarTelFuncionario" alignment="0" min="-2" pref="281" max="-2" attributes="0"/>
                               <Component id="jLabel6" alignment="0" min="-2" pref="63" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="29" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="buscarCpfFuncionario" alignment="0" min="-2" pref="281" max="-2" attributes="0"/>
@@ -475,6 +471,13 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtualizarFuncionarioActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="inputBuscarFuncionario">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                  <Format format="###.###.###-##" subtype="-1" type="5"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

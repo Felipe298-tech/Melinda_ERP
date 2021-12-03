@@ -20,12 +20,9 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Lenovo/Documents/Melinda_ERP/src/View/Cliente/TelaCliente.java</file>
-            <file>file:/C:/Users/Lenovo/Documents/Melinda_ERP/src/View/Produto/TelaProduto.java</file>
-            <file>file:/C:/Users/Lenovo/Documents/Melinda_ERP/src/View/Tela_Loading.java</file>
-            <file>file:/C:/Users/Lenovo/Documents/Melinda_ERP/src/View/Tela_Login.java</file>
-            <file>file:/C:/Users/Lenovo/Documents/Melinda_ERP/src/View/Menu.java</file>
-            <file>file:/C:/Users/Lenovo/Documents/Melinda_ERP/src/View/Funcionario/TelaFuncionario.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/Melinda_ERP/src/View/Produto/Cad_Produto.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/Melinda_ERP/src/View/Funcionario/Cad_Funcionario.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/Melinda_ERP/src/View/Cliente/Cad_Cliente.java</file>
         </group>
     </open-files>
 </project-private>
