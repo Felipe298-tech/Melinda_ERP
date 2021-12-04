@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://i.ibb.co/qmCdwKk/Fundo-Transparente-3.png" width="150" />
+    <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://i.ibb.co/kJ9MSxm/melida-logo-v2.png" width="170" />
 </h1>
 
 <h4 align="center"> 
